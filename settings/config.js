@@ -1,0 +1,5 @@
+global.creator = "@kyuubeyours - tester"
+global.token = "7678320940:AAEncNNdv9eezNjsyRxzVVhhlc23Ftg31zg"
+global.chatid = "6816288495"
+global.watermark = "!s kyuubeyours — log notification"
+global.anu = "```"
