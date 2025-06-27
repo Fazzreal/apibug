@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KyuuRzy - API</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="header-container" id="header">
+        <div class="header-content">
+            <div class="header-title">KyuuRzy - API</div>
+            <div class="header-subtitle">REST API endpoints documentation</div>
+        </div>
+    </div>
+
+    <div class="container main-content">
+        <section id="userInfoSection" class="section">
+            <h2 class="section-title">System Information</h2>
+            <div class="info-grid">
+                <div class="info-card animate-fadeInUp delay-100">
+                    <div class="info-card-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="6" width="18" height="12" rx="2" ry="2"></rect>
+                            <line x1="23" y1="13" x2="23" y2="11"></line>
+                        </svg>
+                        Battery Status
+                    </div>
+                    <div class="info-card-value" id="battery">Loading...</div>
+                </div>
+
+                <div class="info-card animate-fadeInUp delay-200">
+                    <div class="info-card-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        Current Time
+                    </div>
+                    <div class="info-card-value" id="time">Loading...</div>
+                </div>
+
+                <div class="info-card animate-fadeInUp delay-300">
+                    <div class="info-card-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 11l3 3L22 4"></path>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                        IP Address
+                    </div>
+                    <div class="info-card-value" id="ip">Loading...</div>
+                </div>
+
+                <div class="info-card animate-fadeInUp delay-400">
+                    <div class="info-card-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Location
+                    </div>
+                    <div class="info-card-value" id="region">Loading...</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="endpointsSection" class="section">
+            <h2 class="section-title">API Endpoints</h2>
+            <div class="endpoints-container">
+                <div class="endpoint animate-fadeInUp delay-100">
+                    <div class="endpoint-header">
+                        <span class="method">GET</span>
+                        <span class="endpoint-path">/api/forcecall</span>
+                        <div class="endpoint-actions">
+                            <button class="action-btn" onclick="goToEndpoint('/api/bug/forcecall?target=')" title="Go to endpoint">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Open
+                            </button>
+                            <button class="action-btn" onclick="copyEndpoint('/api/bug/forcecall?target=')" title="Copy endpoint">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                    <div class="endpoint-body">
+                        <p class="endpoint-description">
+                            Retrieves a list of all users in the system. This endpoint supports pagination, filtering, and sorting options to help you find exactly what you need.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="endpoint animate-fadeInUp delay-200">
+                    <div class="endpoint-header">
+                        <span class="method">GET</span>
+                        <span class="endpoint-path">/api/carousels</span>
+                        <div class="endpoint-actions">
+                            <button class="action-btn" onclick="goToEndpoint('/api/bug/carousels?target=&fjids=')" title="Go to endpoint">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Open
+                            </button>
+                            <button class="action-btn" onclick="copyEndpoint('/api/bug/carousels?target=&fjids=')" title="Copy endpoint">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                    <div class="endpoint-body">
+                        <p class="endpoint-description">
+                            Provides detailed system statistics and metrics with customizable time ranges. Get insights into user activity, system performance, and other key metrics.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contactSection" class="contact-section">
+            <h2 class="contact-title">Contact Information</h2>
+            <div class="contact-links">
+                <a href="https://t.me/kyuucode" class="contact-link" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.846 1.467 1.618 2.92 2.286 4.347.613.853 1.8 1.638 2.876 1.23.544-.207.979-.78 1.316-1.488.364-.852.594-1.97.77-3.016.334-1.944.608-4.003.825-5.695.217-1.696.402-3.168.497-4.337.062-.775-.032-1.634-.444-2.057-.328-.339-.738-.472-1.022-.511z" />
+                        <path d="M10.952 11.583c.074.001.147-.035.197-.104.314-.438.8-1.22 1.414-2.168l.159-.245c.492-.766.898-1.398 1.189-1.847.358-.547.656-.926.786-1.125a.18.18 0 0 0 .025-.127.18.18 0 0 0-.07-.106.18.18 0 0 0-.125-.029.18.18 0 0 0-.108.067c-.124.196-.415.572-.764 1.114-.29.45-.695 1.08-1.185 1.845l-.159.245c-.613.946-1.099 1.729-1.413 2.168a.18.18 0 0 0-.014.175.18.18 0 0 0 .068.137z" />
+                    </svg>
+                    Telegram
+                </a>
+                <a href="https://github.com/kiuur" class="contact-link" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://wa.me/6281351692548" class="contact-link" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                    WhatsApp
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 KyuuRzy - API</p>
+            <p class="creator">Created by KyuuRzy</p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <span id="toastMessage">Copied to clipboard!</span>
+    </div>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Battery information
+        const batteryElement = document.getElementById('battery');
+        
+        if ('getBattery' in navigator) {
+            navigator.getBattery().then(battery => {
+                updateBatteryInfo(battery);
+                
+                // Listen for battery changes
+                battery.addEventListener('levelchange', () => {
+                    updateBatteryInfo(battery);
+                });
+                battery.addEventListener('chargingchange', () => {
+                    updateBatteryInfo(battery);
+                });
+            });
+        } else {
+            batteryElement.textContent = 'Battery info not available';
+        }
+        
+        function updateBatteryInfo(battery) {
+            const level = Math.floor(battery.level * 100);
+            const charging = battery.charging ? 'Charging' : 'Not charging';
+            batteryElement.textContent = `${level}% (${charging})`;
+        }
+        
+        // Current time
+        const timeElement = document.getElementById('time');
+        
+        function updateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            timeElement.textContent = now.toLocaleDateString(undefined, options);
+        }
+        
+        updateTime();
+        setInterval(updateTime, 1000);
+        
+        // IP and region information
+        const ipElement = document.getElementById('ip');
+        const regionElement = document.getElementById('region');
+        
+        fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                ipElement.textContent = data.ip;
+                regionElement.textContent = `${data.city}, ${data.region}, ${data.country_name}`;
+            })
+            .catch(error => {
+                ipElement.textContent = 'Could not fetch IP';
+                regionElement.textContent = 'Could not fetch region';
+                console.error('Error fetching IP info:', error);
+            });
+        
+        // Copy endpoint function
+        function copyEndpoint(path) {
+            navigator.clipboard.writeText(window.location.origin + path)
+                .then(() => {
+                    showToast('Endpoint path copied to clipboard!');
+                })
+                .catch(err => {
+                    console.error('Could not copy text: ', err);
+                });
+        }
+        
+        // Go to endpoint function
+        function goToEndpoint(path) {
+            window.open(window.location.origin + path, '_blank');
+        }
+        
+        // Toast notification
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+        let toastTimeout;
+        
+        function showToast(message) {
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Scroll animations
+        const sections = document.querySelectorAll('.section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
